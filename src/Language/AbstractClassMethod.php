@@ -27,7 +27,8 @@ abstract class AbstractClassMethod extends AbstractLanguage
         'type',
         'visibility',
         'name',
-        'arguments'
+        'arguments',
+        'comments'
     ];
 
     /**
@@ -52,5 +53,15 @@ abstract class AbstractClassMethod extends AbstractLanguage
     public function __toString()
     {
         return $this->visibility . ' ' . $this->name;
+    }
+
+    /**
+     * @param string $comments
+     * @return AbstractClassMethod
+     */
+    public function setComments(string $comments)
+    {
+        $this->comments = $comments;
+        return $this;
     }
 }

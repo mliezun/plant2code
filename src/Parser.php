@@ -144,6 +144,7 @@ class Parser
         $methods = $classifier->getElementsByTagName('Operation');
         foreach ($methods as $meth) {
             $method = $this->parseMethod($meth);
+            $method->setComments($meth->getAttribute('label'));
 
             $class->addMethod($method);
         }

@@ -26,7 +26,11 @@ class Method extends AbstractClassMethod
     {
         $args = [];
         $method = "/**\n";
-        $method .= " *\n";
+
+        $comments = explode('\\n', $this->comments);
+        foreach ($comments as $line) {
+            $method .= " * $line\n";
+        }
         /** @var AbstractClassMethodArgument $argument */
         foreach ($this->arguments as $argument) {
             $method .= " * @param {$argument->type} \${$argument->name}\n";
