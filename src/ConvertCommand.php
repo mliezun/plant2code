@@ -72,7 +72,7 @@ class ConvertCommand extends Command
             $command = "java -jar $appPath/plantuml.jar $puml -xmi:star";
             system($command);
 
-            $commando = "python3.7 $appPath/getComments.py $puml";
+            $command = "python3.7 $appPath/getComments.py $puml";
             system($command);
 
             $io->text('Finished XMI creation.');
